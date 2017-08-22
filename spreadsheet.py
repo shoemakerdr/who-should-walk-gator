@@ -29,18 +29,24 @@ def get_walker():
             'Saturday',
             'Sunday'
     ]
-    day = days[today().weekday()]
     hour = now().hour
+    day = days[today_or_tomorrow(hour, today().weekday())]
     time_index = get_index_by_hour(hour)
     walker = schedule[time_index][day]
     return walker
 
 
+def today_or_tomorrow(hour, day_index):
+    # if before 7pm, return today index
+    if hour < 19:
+        return day_index
+    # else return tomorrow index
+    return (day_index + 8) % 7
+
+
 def get_index_by_hour(hour):
-    # before 11 am return 0 morning index
+    # after 7pm and before 11am return 0 morning index
     if hour < 11 or hour > 19:
         return 0
-    # before 8pm return 1 afternoon index
+    # between 11am and 7pm return 1 afternoon index
     return 1
-
-print(get_walker(), 'should walk Gator next.')
