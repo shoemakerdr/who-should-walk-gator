@@ -1,17 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:500');
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #CDC8F7;
+    background-color: #0A53B9;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 .name {
-    color: #166FFF;
-    font-size: 3.5em;
+    color: white;
+    font-size: 2.5em;
     text-align: center;
-    border-bottom: .2em solid #F7FFA8;
+    border-bottom: .2em solid white;
+    margin: .1em;
+}
+
+.next-walk {
+    color: white;
+    margin: 0;
 }
 
 .gator-pic {
+    box-shadow: 0 14px 28px
+      rgba(0,0,0,0.25), 0 10px 10px
+      rgba(0,0,0,0.22);
 }
