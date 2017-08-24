@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #CDC8F7;
+}
+
+.name {
+    color: #166FFF;
+    font-size: 3.5em;
+    text-align: center;
+    border-bottom: .2em solid #F7FFA8;
+}
+
+.gator-pic {
+}
