@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="index.css")}}'>
+        <title>Who Should Walk Gator?</title>
+    </head>
+    <body>
+        <div>
+            <img src='{{ url_for("static", filename="2017-02-23.jpg")}}' alt='Gator Is A Happy Dog' class='gator-pic'>
+        </div>
+        <h1 class='name'>{{name}} should walk Gator.</h1>
+    </body>
+</html>
