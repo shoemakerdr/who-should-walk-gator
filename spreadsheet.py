@@ -18,7 +18,7 @@ def get_schedule():
     return schedule
 
 
-def get_walker():
+def get_data():
     schedule = get_schedule()
     days = [
             'Monday',
@@ -33,7 +33,12 @@ def get_walker():
     day = days[today_or_tomorrow(hour, today().weekday())]
     time_index = get_index_by_hour(hour)
     walker = schedule[time_index][day]
-    return walker
+    data = {
+            "walker": walker,
+            "day": day,
+            "time": "morning" if time_index == 0 else "afternoon"
+            }
+    return data
 
 
 def today_or_tomorrow(hour, day_index):
