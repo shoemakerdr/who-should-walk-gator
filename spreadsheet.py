@@ -1,12 +1,13 @@
 
-from datetime import date
 from datetime import datetime
+from pendulum import timezone
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 AccountCred = ServiceAccountCredentials
-today = date.today
-now = datetime.now
+chicago = timezone('America/Chicago')
+now = chicago.convert(datetime.now())
+today = now.today
 
 
 def get_schedule():
@@ -29,7 +30,7 @@ def get_data():
             'Saturday',
             'Sunday'
     ]
-    hour = now().hour
+    hour = now.hour
     day = days[today_or_tomorrow(hour, today().weekday())]
     time_index = get_index_by_hour(hour)
     walker = schedule[time_index][day]
