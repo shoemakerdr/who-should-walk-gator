@@ -44,7 +44,7 @@ def get_data():
 
 def today_or_tomorrow(hour, day_index):
     # if before 7pm, return today index
-    if hour < 19:
+    if hour <= 19:
         return day_index
     # else return tomorrow index
     return (day_index + 8) % 7
