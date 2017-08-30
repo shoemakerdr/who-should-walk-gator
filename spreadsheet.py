@@ -43,7 +43,7 @@ def get_data():
 
 
 def today_or_tomorrow(hour, day_index):
-    # if before 7pm, return today index
+    # if before 8pm, return today index
     if hour <= 19:
         return day_index
     # else return tomorrow index
@@ -51,8 +51,8 @@ def today_or_tomorrow(hour, day_index):
 
 
 def get_index_by_hour(hour):
-    # after 7pm and before 11am return 0 morning index
+    # after 8pm and before 11am return 0 morning index
     if hour < 11 or hour > 19:
         return 0
-    # between 11am and 7pm return 1 afternoon index
+    # between 11am and 8pm return 1 afternoon index
     return 1
